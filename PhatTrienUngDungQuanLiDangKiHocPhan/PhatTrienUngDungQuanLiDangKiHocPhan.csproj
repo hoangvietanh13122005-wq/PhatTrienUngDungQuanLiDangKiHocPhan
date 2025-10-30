@@ -33,8 +33,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Guna.UI2, Version=2.0.4.7, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
+      <HintPath>..\packages\Guna.UI2.WinForms.2.0.4.7\lib\net48\Guna.UI2.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -52,8 +58,47 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAdmin.Designer.cs">
+      <DependentUpon>frmAdmin.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UC_QLGiangVien.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_QLGiangVien.Designer.cs">
+      <DependentUpon>UC_QLGiangVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_QLHocPhan.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_QLHocPhan.Designer.cs">
+      <DependentUpon>UC_QLHocPhan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_QLLopHocPhan.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_QLLopHocPhan.Designer.cs">
+      <DependentUpon>UC_QLLopHocPhan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_QLSinhVien.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_QLSinhVien.Designer.cs">
+      <DependentUpon>UC_QLSinhVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_XepLopHocPhan.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_XepLopHocPhan.Designer.cs">
+      <DependentUpon>UC_XepLopHocPhan.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="frmAdmin.resx">
+      <DependentUpon>frmAdmin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -63,6 +108,22 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UC_QLGiangVien.resx">
+      <DependentUpon>UC_QLGiangVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_QLHocPhan.resx">
+      <DependentUpon>UC_QLHocPhan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_QLLopHocPhan.resx">
+      <DependentUpon>UC_QLLopHocPhan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_QLSinhVien.resx">
+      <DependentUpon>UC_QLSinhVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_XepLopHocPhan.resx">
+      <DependentUpon>UC_XepLopHocPhan.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
