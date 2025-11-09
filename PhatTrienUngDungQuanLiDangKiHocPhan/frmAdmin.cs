@@ -9,6 +9,7 @@ using System.Security.AccessControl;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using UngdungQuanliDangkiHocphan;
 
 namespace PhatTrienUngDungQuanLiDangKiHocPhan
 {
@@ -26,8 +27,7 @@ namespace PhatTrienUngDungQuanLiDangKiHocPhan
         }
         private void frmAdmin_Load(object sender, EventArgs e)
         {
-            this.WindowState = FormWindowState.Minimized;
-            LoadUserControl(new UC_QLHocPhan());
+            LoadUserControl(new UC_QLHocKi());
         }
         private void btnlophocphan_Click(object sender, EventArgs e)
         {
@@ -94,6 +94,11 @@ namespace PhatTrienUngDungQuanLiDangKiHocPhan
         private void paneltop_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void btnqlhk_Click(object sender, EventArgs e)
+        {
+            LoadUserControl(new UC_QLHocKi());
         }
     }
 }
