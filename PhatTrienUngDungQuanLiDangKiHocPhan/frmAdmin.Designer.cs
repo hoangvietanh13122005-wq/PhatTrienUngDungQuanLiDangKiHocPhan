@@ -33,6 +33,7 @@
             this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.btnqlhk = new Guna.UI2.WinForms.Guna2Button();
             this.btnreport = new Guna.UI2.WinForms.Guna2Button();
             this.btngiangvien = new Guna.UI2.WinForms.Guna2Button();
             this.btnsinhvien = new Guna.UI2.WinForms.Guna2Button();
@@ -107,6 +108,7 @@
             // guna2Panel1
             // 
             this.guna2Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(115)))), ((int)(((byte)(190)))));
+            this.guna2Panel1.Controls.Add(this.btnqlhk);
             this.guna2Panel1.Controls.Add(this.btnreport);
             this.guna2Panel1.Controls.Add(this.btngiangvien);
             this.guna2Panel1.Controls.Add(this.btnsinhvien);
@@ -116,9 +118,25 @@
             this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.guna2Panel1.Location = new System.Drawing.Point(0, 100);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(338, 428);
+            this.guna2Panel1.Size = new System.Drawing.Size(338, 495);
             this.guna2Panel1.TabIndex = 1;
             this.guna2Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2Panel1_Paint);
+            // 
+            // btnqlhk
+            // 
+            this.btnqlhk.BorderRadius = 15;
+            this.btnqlhk.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnqlhk.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnqlhk.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnqlhk.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnqlhk.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnqlhk.ForeColor = System.Drawing.Color.White;
+            this.btnqlhk.Location = new System.Drawing.Point(21, 143);
+            this.btnqlhk.Name = "btnqlhk";
+            this.btnqlhk.Size = new System.Drawing.Size(250, 45);
+            this.btnqlhk.TabIndex = 8;
+            this.btnqlhk.Text = "Quản lí học kỳ";
+            this.btnqlhk.Click += new System.EventHandler(this.btnqlhk_Click);
             // 
             // btnreport
             // 
@@ -129,7 +147,7 @@
             this.btnreport.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnreport.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnreport.ForeColor = System.Drawing.Color.White;
-            this.btnreport.Location = new System.Drawing.Point(21, 342);
+            this.btnreport.Location = new System.Drawing.Point(21, 398);
             this.btnreport.Name = "btnreport";
             this.btnreport.Size = new System.Drawing.Size(250, 45);
             this.btnreport.TabIndex = 7;
@@ -145,7 +163,7 @@
             this.btngiangvien.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btngiangvien.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btngiangvien.ForeColor = System.Drawing.Color.White;
-            this.btngiangvien.Location = new System.Drawing.Point(21, 291);
+            this.btngiangvien.Location = new System.Drawing.Point(21, 347);
             this.btngiangvien.Name = "btngiangvien";
             this.btngiangvien.Size = new System.Drawing.Size(250, 45);
             this.btngiangvien.TabIndex = 6;
@@ -161,7 +179,7 @@
             this.btnsinhvien.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnsinhvien.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnsinhvien.ForeColor = System.Drawing.Color.White;
-            this.btnsinhvien.Location = new System.Drawing.Point(21, 240);
+            this.btnsinhvien.Location = new System.Drawing.Point(21, 296);
             this.btnsinhvien.Name = "btnsinhvien";
             this.btnsinhvien.Size = new System.Drawing.Size(250, 45);
             this.btnsinhvien.TabIndex = 5;
@@ -177,7 +195,7 @@
             this.btnlophocphan.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnlophocphan.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnlophocphan.ForeColor = System.Drawing.Color.White;
-            this.btnlophocphan.Location = new System.Drawing.Point(21, 189);
+            this.btnlophocphan.Location = new System.Drawing.Point(21, 245);
             this.btnlophocphan.Name = "btnlophocphan";
             this.btnlophocphan.Size = new System.Drawing.Size(250, 45);
             this.btnlophocphan.TabIndex = 4;
@@ -193,7 +211,7 @@
             this.btnhocphan.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnhocphan.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnhocphan.ForeColor = System.Drawing.Color.White;
-            this.btnhocphan.Location = new System.Drawing.Point(21, 138);
+            this.btnhocphan.Location = new System.Drawing.Point(21, 194);
             this.btnhocphan.Name = "btnhocphan";
             this.btnhocphan.Size = new System.Drawing.Size(250, 45);
             this.btnhocphan.TabIndex = 3;
@@ -242,7 +260,7 @@
             this.panelmain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelmain.Location = new System.Drawing.Point(338, 100);
             this.panelmain.Name = "panelmain";
-            this.panelmain.Size = new System.Drawing.Size(1039, 428);
+            this.panelmain.Size = new System.Drawing.Size(1039, 495);
             this.panelmain.TabIndex = 2;
             this.panelmain.Paint += new System.Windows.Forms.PaintEventHandler(this.panelmain_Paint);
             // 
@@ -250,13 +268,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1377, 528);
+            this.ClientSize = new System.Drawing.Size(1377, 595);
             this.Controls.Add(this.panelmain);
             this.Controls.Add(this.guna2Panel1);
             this.Controls.Add(this.paneltop);
             this.Name = "frmAdmin";
             this.Text = "Quản lí đăng kí học phần";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.frmAdmin_Load);
             this.paneltop.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).EndInit();
             this.guna2Panel1.ResumeLayout(false);
@@ -280,6 +299,10 @@
         private Guna.UI2.WinForms.Guna2Button btnreport;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblma;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblten;
+
+        private Guna.UI2.WinForms.Guna2Button btnqlhk;
+
         private Guna.UI2.WinForms.Guna2Button btnDangXuat;
+
     }
 }
