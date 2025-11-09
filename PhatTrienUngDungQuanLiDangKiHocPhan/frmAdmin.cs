@@ -27,7 +27,7 @@ namespace PhatTrienUngDungQuanLiDangKiHocPhan
         }
         private void frmAdmin_Load(object sender, EventArgs e)
         {
-            LoadUserControl(new UC_QLHocKi());
+            LoadUserControl(new UC_QLHocKi());  
         }
         private void btnlophocphan_Click(object sender, EventArgs e)
         {
