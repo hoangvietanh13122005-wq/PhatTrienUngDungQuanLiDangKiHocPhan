@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.pnlHeader = new Guna.UI2.WinForms.Guna2Panel();
+            this.btnDangXuat = new Guna.UI2.WinForms.Guna2Button();
             this.picLogo = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.lblTenDaihoc = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.pnlSidebar = new Guna.UI2.WinForms.Guna2Panel();
@@ -50,6 +51,7 @@
             // 
             // pnlHeader
             // 
+            this.pnlHeader.Controls.Add(this.btnDangXuat);
             this.pnlHeader.Controls.Add(this.picLogo);
             this.pnlHeader.Controls.Add(this.lblTenDaihoc);
             this.pnlHeader.Dock = System.Windows.Forms.DockStyle.Top;
@@ -60,11 +62,30 @@
             this.pnlHeader.TabIndex = 0;
             this.pnlHeader.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlHeader_Paint);
             // 
+            // btnDangXuat
+            // 
+            this.btnDangXuat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDangXuat.BackColor = System.Drawing.Color.Transparent;
+            this.btnDangXuat.BorderColor = System.Drawing.Color.Transparent;
+            this.btnDangXuat.BorderRadius = 10;
+            this.btnDangXuat.BorderThickness = 1;
+            this.btnDangXuat.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnDangXuat.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnDangXuat.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnDangXuat.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnDangXuat.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.btnDangXuat.ForeColor = System.Drawing.Color.White;
+            this.btnDangXuat.Location = new System.Drawing.Point(1667, 40);
+            this.btnDangXuat.Name = "btnDangXuat";
+            this.btnDangXuat.Size = new System.Drawing.Size(113, 36);
+            this.btnDangXuat.TabIndex = 5;
+            this.btnDangXuat.Text = "Đăng xuất";
+            this.btnDangXuat.Click += new System.EventHandler(this.btnDangXuat_Click);
+            // 
             // picLogo
             // 
             this.picLogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(115)))), ((int)(((byte)(190)))));
             this.picLogo.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(115)))), ((int)(((byte)(190)))));
-            
             this.picLogo.ImageRotate = 0F;
             this.picLogo.Location = new System.Drawing.Point(99, 3);
             this.picLogo.Name = "picLogo";
@@ -77,8 +98,8 @@
             // 
             // lblTenDaihoc
             // 
-            this.lblTenDaihoc.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.lblTenDaihoc.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblTenDaihoc.AutoSize = false;
             this.lblTenDaihoc.AutoSizeHeightOnly = true;
@@ -199,7 +220,6 @@
             // guna2CirclePictureBox1
             // 
             this.guna2CirclePictureBox1.BackColor = System.Drawing.Color.Transparent;
-           
             this.guna2CirclePictureBox1.ImageRotate = 0F;
             this.guna2CirclePictureBox1.Location = new System.Drawing.Point(83, 12);
             this.guna2CirclePictureBox1.Name = "guna2CirclePictureBox1";
@@ -244,6 +264,7 @@
             this.Controls.Add(this.pnlHeader);
             this.Name = "frmMain";
             this.Text = "FormMain";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.pnlHeader.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
             this.pnlSidebar.ResumeLayout(false);
@@ -268,6 +289,7 @@
         private Guna.UI2.WinForms.Guna2Button btnTCHP;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblChucNang;
         private Guna.UI2.WinForms.Guna2Panel pnlMainContent;
+        private Guna.UI2.WinForms.Guna2Button btnDangXuat;
     }
 }
 
