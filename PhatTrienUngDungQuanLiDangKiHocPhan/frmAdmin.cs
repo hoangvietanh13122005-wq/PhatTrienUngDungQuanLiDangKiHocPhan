@@ -96,9 +96,17 @@ namespace PhatTrienUngDungQuanLiDangKiHocPhan
 
         }
 
+
         private void btnqlhk_Click(object sender, EventArgs e)
         {
             LoadUserControl(new UC_QLHocKi());
+
+        private void btnDangXuat_Click(object sender, EventArgs e)
+        {
+            // Show login form and close this admin form
+     
+            this.Close();
+
         }
     }
 }
