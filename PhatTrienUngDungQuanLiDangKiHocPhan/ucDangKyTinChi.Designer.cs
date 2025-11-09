@@ -48,21 +48,22 @@ namespace PhatTrienUngDungQuanLiDangKiHocPhan
             this.lblProgram = new System.Windows.Forms.Label();
             this.cboChuongTrinh = new Guna.UI2.WinForms.Guna2ComboBox();
             this.dgvMonHoc = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.dgvLopHocPhan = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.pnlThongTinDangKy = new Guna.UI2.WinForms.Guna2Panel();
-            this.dgvDaDangKy = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.lblTongTinChi = new System.Windows.Forms.Label();
-            this.lblTitle = new System.Windows.Forms.Label();
             this.MaHP = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenHP = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.STC = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnCol = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.dgvLopHocPhan = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.pnlThongTinDangKy = new Guna.UI2.WinForms.Guna2Panel();
+            this.dgvDaDangKy = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.TenMon = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NameLHP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblTongTinChi = new System.Windows.Forms.Label();
+            this.lblTitle = new System.Windows.Forms.Label();
             this.MaLHP = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaLH = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SoChoTrong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenMon = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NameLHP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnDangKy = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panelTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMonHoc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLopHocPhan)).BeginInit();
@@ -165,6 +166,32 @@ namespace PhatTrienUngDungQuanLiDangKiHocPhan
             this.dgvMonHoc.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvMonHoc.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             // 
+            // MaHP
+            // 
+            this.MaHP.HeaderText = "Mã học phần";
+            this.MaHP.MinimumWidth = 6;
+            this.MaHP.Name = "MaHP";
+            // 
+            // TenHP
+            // 
+            this.TenHP.HeaderText = "Tên học phần";
+            this.TenHP.MinimumWidth = 6;
+            this.TenHP.Name = "TenHP";
+            // 
+            // STC
+            // 
+            this.STC.HeaderText = "Số tín chỉ";
+            this.STC.MinimumWidth = 6;
+            this.STC.Name = "STC";
+            // 
+            // btnCol
+            // 
+            this.btnCol.HeaderText = "";
+            this.btnCol.MinimumWidth = 6;
+            this.btnCol.Name = "btnCol";
+            this.btnCol.Text = "Đăng ký";
+            this.btnCol.UseColumnTextForButtonValue = true;
+            // 
             // dgvLopHocPhan
             // 
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
@@ -182,7 +209,8 @@ namespace PhatTrienUngDungQuanLiDangKiHocPhan
             this.MaLHP,
             this.MaLH,
             this.TenGV,
-            this.SoChoTrong});
+            this.SoChoTrong,
+            this.btnDangKy});
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -290,6 +318,18 @@ namespace PhatTrienUngDungQuanLiDangKiHocPhan
             this.dgvDaDangKy.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.dgvDaDangKy.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDaDangKy_CellContentClick);
             // 
+            // TenMon
+            // 
+            this.TenMon.HeaderText = "Môn học";
+            this.TenMon.MinimumWidth = 6;
+            this.TenMon.Name = "TenMon";
+            // 
+            // NameLHP
+            // 
+            this.NameLHP.HeaderText = "Lớp HP";
+            this.NameLHP.MinimumWidth = 6;
+            this.NameLHP.Name = "NameLHP";
+            // 
             // lblTongTinChi
             // 
             this.lblTongTinChi.Dock = System.Windows.Forms.DockStyle.Top;
@@ -310,32 +350,6 @@ namespace PhatTrienUngDungQuanLiDangKiHocPhan
             this.lblTitle.Size = new System.Drawing.Size(300, 40);
             this.lblTitle.TabIndex = 2;
             this.lblTitle.Text = "TỔNG HỢP ĐĂNG KÝ";
-            // 
-            // MaHP
-            // 
-            this.MaHP.HeaderText = "Mã học phần";
-            this.MaHP.MinimumWidth = 6;
-            this.MaHP.Name = "MaHP";
-            // 
-            // TenHP
-            // 
-            this.TenHP.HeaderText = "Tên học phần";
-            this.TenHP.MinimumWidth = 6;
-            this.TenHP.Name = "TenHP";
-            // 
-            // STC
-            // 
-            this.STC.HeaderText = "Số tín chỉ";
-            this.STC.MinimumWidth = 6;
-            this.STC.Name = "STC";
-            // 
-            // btnCol
-            // 
-            this.btnCol.HeaderText = "";
-            this.btnCol.MinimumWidth = 6;
-            this.btnCol.Name = "btnCol";
-            this.btnCol.Text = "Đăng ký";
-            this.btnCol.UseColumnTextForButtonValue = true;
             // 
             // MaLHP
             // 
@@ -361,17 +375,13 @@ namespace PhatTrienUngDungQuanLiDangKiHocPhan
             this.SoChoTrong.MinimumWidth = 6;
             this.SoChoTrong.Name = "SoChoTrong";
             // 
-            // TenMon
+            // btnDangKy
             // 
-            this.TenMon.HeaderText = "Môn học";
-            this.TenMon.MinimumWidth = 6;
-            this.TenMon.Name = "TenMon";
-            // 
-            // NameLHP
-            // 
-            this.NameLHP.HeaderText = "Lớp HP";
-            this.NameLHP.MinimumWidth = 6;
-            this.NameLHP.Name = "NameLHP";
+            this.btnDangKy.HeaderText = "";
+            this.btnDangKy.MinimumWidth = 6;
+            this.btnDangKy.Name = "btnDangKy";
+            this.btnDangKy.Text = "Đăng ký";
+            this.btnDangKy.UseColumnTextForButtonValue = true;
             // 
             // ucDangKyTinChi
             // 
@@ -397,11 +407,12 @@ namespace PhatTrienUngDungQuanLiDangKiHocPhan
         private DataGridViewTextBoxColumn TenHP;
         private DataGridViewTextBoxColumn STC;
         private DataGridViewButtonColumn btnCol;
+        private DataGridViewTextBoxColumn TenMon;
+        private DataGridViewTextBoxColumn NameLHP;
         private DataGridViewTextBoxColumn MaLHP;
         private DataGridViewTextBoxColumn MaLH;
         private DataGridViewTextBoxColumn TenGV;
         private DataGridViewTextBoxColumn SoChoTrong;
-        private DataGridViewTextBoxColumn TenMon;
-        private DataGridViewTextBoxColumn NameLHP;
+        private DataGridViewButtonColumn btnDangKy;
     }
 }

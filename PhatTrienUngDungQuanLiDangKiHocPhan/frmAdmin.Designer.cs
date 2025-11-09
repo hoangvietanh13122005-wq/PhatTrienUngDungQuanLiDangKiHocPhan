@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.paneltop = new Guna.UI2.WinForms.Guna2Panel();
+            this.btnDangXuat = new Guna.UI2.WinForms.Guna2Button();
             this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
@@ -49,6 +50,7 @@
             // 
             // paneltop
             // 
+            this.paneltop.Controls.Add(this.btnDangXuat);
             this.paneltop.Controls.Add(this.guna2CirclePictureBox1);
             this.paneltop.Controls.Add(this.guna2HtmlLabel1);
             this.paneltop.Dock = System.Windows.Forms.DockStyle.Top;
@@ -58,6 +60,24 @@
             this.paneltop.Size = new System.Drawing.Size(1377, 100);
             this.paneltop.TabIndex = 0;
             this.paneltop.Paint += new System.Windows.Forms.PaintEventHandler(this.paneltop_Paint);
+            // 
+            // btnDangXuat
+            // 
+            this.btnDangXuat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDangXuat.BackColor = System.Drawing.Color.Transparent;
+            this.btnDangXuat.BorderRadius = 10;
+            this.btnDangXuat.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnDangXuat.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnDangXuat.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnDangXuat.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnDangXuat.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.btnDangXuat.ForeColor = System.Drawing.Color.White;
+            this.btnDangXuat.Location = new System.Drawing.Point(1230, 30);
+            this.btnDangXuat.Name = "btnDangXuat";
+            this.btnDangXuat.Size = new System.Drawing.Size(135, 36);
+            this.btnDangXuat.TabIndex = 8;
+            this.btnDangXuat.Text = "Đăng xuất";
+            this.btnDangXuat.Click += new System.EventHandler(this.btnDangXuat_Click);
             // 
             // guna2CirclePictureBox1
             // 
@@ -260,5 +280,6 @@
         private Guna.UI2.WinForms.Guna2Button btnreport;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblma;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblten;
+        private Guna.UI2.WinForms.Guna2Button btnDangXuat;
     }
 }
