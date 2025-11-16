@@ -26,6 +26,7 @@ namespace PhatTrienUngDungQuanLiDangKiHocPhan
         private void InitializeComponent()
         {
             this.panelTop = new System.Windows.Forms.Panel();
+            this.btnInBaoCao = new System.Windows.Forms.Button();
             this.lblTimTheo = new System.Windows.Forms.Label();
             this.cboNamHoc = new System.Windows.Forms.ComboBox();
             this.lblTuKhoa = new System.Windows.Forms.Label();
@@ -40,7 +41,6 @@ namespace PhatTrienUngDungQuanLiDangKiHocPhan
             this.ThoiGian = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.HanhDong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblHeader = new System.Windows.Forms.Label();
-            this.btnInBaoCao = new System.Windows.Forms.Button();
             this.panelTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDangKy)).BeginInit();
             this.SuspendLayout();
@@ -61,6 +61,20 @@ namespace PhatTrienUngDungQuanLiDangKiHocPhan
             this.panelTop.Size = new System.Drawing.Size(1113, 70);
             this.panelTop.TabIndex = 1;
             this.panelTop.Paint += new System.Windows.Forms.PaintEventHandler(this.panelTop_Paint);
+            // 
+            // btnInBaoCao
+            // 
+            this.btnInBaoCao.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnInBaoCao.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(215)))));
+            this.btnInBaoCao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnInBaoCao.ForeColor = System.Drawing.Color.White;
+            this.btnInBaoCao.Location = new System.Drawing.Point(937, 20);
+            this.btnInBaoCao.Name = "btnInBaoCao";
+            this.btnInBaoCao.Size = new System.Drawing.Size(151, 30);
+            this.btnInBaoCao.TabIndex = 6;
+            this.btnInBaoCao.Text = "Xuất danh sách";
+            this.btnInBaoCao.UseVisualStyleBackColor = false;
+            this.btnInBaoCao.Click += new System.EventHandler(this.btnInBaoCao_Click);
             // 
             // lblTimTheo
             // 
@@ -209,19 +223,6 @@ namespace PhatTrienUngDungQuanLiDangKiHocPhan
             this.lblHeader.TabIndex = 0;
             this.lblHeader.Text = "QUẢN LÍ SINH VIÊN";
             this.lblHeader.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // btnInBaoCao
-            // 
-            this.btnInBaoCao.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(215)))));
-            this.btnInBaoCao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnInBaoCao.ForeColor = System.Drawing.Color.White;
-            this.btnInBaoCao.Location = new System.Drawing.Point(937, 20);
-            this.btnInBaoCao.Name = "btnInBaoCao";
-            this.btnInBaoCao.Size = new System.Drawing.Size(151, 30);
-            this.btnInBaoCao.TabIndex = 6;
-            this.btnInBaoCao.Text = "Xuất danh sách";
-            this.btnInBaoCao.UseVisualStyleBackColor = false;
-            this.btnInBaoCao.Click += new System.EventHandler(this.btnInBaoCao_Click);
             // 
             // UC_QLSinhVien
             // 

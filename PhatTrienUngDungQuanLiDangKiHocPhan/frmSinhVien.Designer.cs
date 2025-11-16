@@ -30,7 +30,6 @@
         {
             this.pnlHeader = new Guna.UI2.WinForms.Guna2Panel();
             this.btnDangXuat = new Guna.UI2.WinForms.Guna2Button();
-            this.picLogo = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.lblTenDaihoc = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.pnlSidebar = new Guna.UI2.WinForms.Guna2Panel();
             this.lblChucNang = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -38,15 +37,16 @@
             this.btnTCHP = new Guna.UI2.WinForms.Guna2Button();
             this.btnDKTC = new Guna.UI2.WinForms.Guna2Button();
             this.pnlThongTinSV = new Guna.UI2.WinForms.Guna2ShadowPanel();
-            this.lblMSV = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.lblTenSV = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.lblMSV = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.pnlMainContent = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.picLogo = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.pnlHeader.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             this.pnlSidebar.SuspendLayout();
             this.pnlThongTinSV.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlHeader
@@ -81,20 +81,6 @@
             this.btnDangXuat.TabIndex = 5;
             this.btnDangXuat.Text = "Đăng xuất";
             this.btnDangXuat.Click += new System.EventHandler(this.btnDangXuat_Click);
-            // 
-            // picLogo
-            // 
-            this.picLogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(115)))), ((int)(((byte)(190)))));
-            this.picLogo.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(115)))), ((int)(((byte)(190)))));
-            this.picLogo.ImageRotate = 0F;
-            this.picLogo.Location = new System.Drawing.Point(99, 3);
-            this.picLogo.Name = "picLogo";
-            this.picLogo.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.picLogo.Size = new System.Drawing.Size(119, 116);
-            this.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picLogo.TabIndex = 1;
-            this.picLogo.TabStop = false;
-            this.picLogo.Click += new System.EventHandler(this.picLogo_Click);
             // 
             // lblTenDaihoc
             // 
@@ -204,6 +190,18 @@
             this.pnlThongTinSV.Size = new System.Drawing.Size(221, 143);
             this.pnlThongTinSV.TabIndex = 0;
             // 
+            // lblTenSV
+            // 
+            this.lblTenSV.AutoSize = false;
+            this.lblTenSV.BackColor = System.Drawing.Color.Transparent;
+            this.lblTenSV.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTenSV.ForeColor = System.Drawing.Color.Transparent;
+            this.lblTenSV.Location = new System.Drawing.Point(34, 78);
+            this.lblTenSV.Name = "lblTenSV";
+            this.lblTenSV.Size = new System.Drawing.Size(310, 34);
+            this.lblTenSV.TabIndex = 1;
+            this.lblTenSV.Text = "TenSV";
+            // 
             // lblMSV
             // 
             this.lblMSV.AutoSize = false;
@@ -217,9 +215,20 @@
             this.lblMSV.TabIndex = 2;
             this.lblMSV.Text = "MSV";
             // 
+            // pnlMainContent
+            // 
+            this.pnlMainContent.BackColor = System.Drawing.Color.Transparent;
+            this.pnlMainContent.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlMainContent.FillColor = System.Drawing.Color.White;
+            this.pnlMainContent.Location = new System.Drawing.Point(275, 122);
+            this.pnlMainContent.Name = "pnlMainContent";
+            this.pnlMainContent.Size = new System.Drawing.Size(1525, 583);
+            this.pnlMainContent.TabIndex = 2;
+            // 
             // guna2CirclePictureBox1
             // 
             this.guna2CirclePictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2CirclePictureBox1.Image = global::PhatTrienUngDungQuanLiDangKiHocPhan.Properties.Resources.user;
             this.guna2CirclePictureBox1.ImageRotate = 0F;
             this.guna2CirclePictureBox1.Location = new System.Drawing.Point(83, 12);
             this.guna2CirclePictureBox1.Name = "guna2CirclePictureBox1";
@@ -230,27 +239,20 @@
             this.guna2CirclePictureBox1.TabStop = false;
             this.guna2CirclePictureBox1.UseTransparentBackground = true;
             // 
-            // lblTenSV
+            // picLogo
             // 
-            this.lblTenSV.AutoSize = false;
-            this.lblTenSV.BackColor = System.Drawing.Color.Transparent;
-            this.lblTenSV.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTenSV.ForeColor = System.Drawing.Color.Transparent;
-            this.lblTenSV.Location = new System.Drawing.Point(34, 78);
-            this.lblTenSV.Name = "lblTenSV";
-            this.lblTenSV.Size = new System.Drawing.Size(310, 34);
-            this.lblTenSV.TabIndex = 1;
-            this.lblTenSV.Text = "TenSV";
-            // 
-            // pnlMainContent
-            // 
-            this.pnlMainContent.BackColor = System.Drawing.Color.Transparent;
-            this.pnlMainContent.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlMainContent.FillColor = System.Drawing.Color.White;
-            this.pnlMainContent.Location = new System.Drawing.Point(275, 122);
-            this.pnlMainContent.Name = "pnlMainContent";
-            this.pnlMainContent.Size = new System.Drawing.Size(1525, 583);
-            this.pnlMainContent.TabIndex = 2;
+            this.picLogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(115)))), ((int)(((byte)(190)))));
+            this.picLogo.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(115)))), ((int)(((byte)(190)))));
+            this.picLogo.Image = global::PhatTrienUngDungQuanLiDangKiHocPhan.Properties.Resources.Logo_NEU;
+            this.picLogo.ImageRotate = 0F;
+            this.picLogo.Location = new System.Drawing.Point(99, 3);
+            this.picLogo.Name = "picLogo";
+            this.picLogo.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.picLogo.Size = new System.Drawing.Size(119, 116);
+            this.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picLogo.TabIndex = 1;
+            this.picLogo.TabStop = false;
+            this.picLogo.Click += new System.EventHandler(this.picLogo_Click);
             // 
             // frmMain
             // 
@@ -265,10 +267,10 @@
             this.Text = "FormMain";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.pnlHeader.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
             this.pnlSidebar.ResumeLayout(false);
             this.pnlThongTinSV.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
             this.ResumeLayout(false);
 
         }

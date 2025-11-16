@@ -37,8 +37,8 @@ namespace PhatTrienUngDungQuanLiDangKiHocPhan
             {
                 using (var conn = new SqlConnection(_connectionString))
                 using (var cmd = new SqlCommand(@"SELECT LoaiTaiKhoan, MaNguoiDung, TrangThai 
-                                                 FROM TAI_KHOAN 
-                                                 WHERE TenDangNhap = @user AND MatKhau = @pass", conn))
+                                         FROM TAI_KHOAN 
+                                         WHERE TenDangNhap = @user AND MatKhau = @pass", conn))
                 {
                     cmd.Parameters.AddWithValue("@user", username);
                     cmd.Parameters.AddWithValue("@pass", password);
@@ -62,42 +62,65 @@ namespace PhatTrienUngDungQuanLiDangKiHocPhan
                             return;
                         }
 
-                        if (string.Equals(loai, "Admin", StringComparison.OrdinalIgnoreCase))
-                        {
-                            var admin = new frmAdmin();
-                            admin.FormClosed += (s, args) => this.Show();
-                            admin.Show();
-                            this.Hide();
-                            return;
-                        }
                         reader.Close();
-                        // For student accounts: try to fetch student name (if you have a student table)
-                        string tenSV = null;
+
+                        // Lấy thông tin người dùng (Admin hoặc Sinh viên)
+                        string tenNguoiDung = null;
                         if (!string.IsNullOrEmpty(maNguoiDung))
                         {
-                            using (var cmd2 = new SqlCommand("SELECT HoTen FROM SINH_VIEN WHERE MaSV = @ma", conn))
+                            // Tìm tên trong bảng GIANG_VIEN (cho Admin/Giảng viên)
+                            using (var cmd2 = new SqlCommand("SELECT HoTen FROM CAN_BO_QLDT WHERE MaCB = @ma", conn))
                             {
                                 cmd2.Parameters.AddWithValue("@ma", maNguoiDung);
-                                // If SINH_VIEN doesn't exist in your DB, this will throw; adjust table/column name as needed.
                                 try
                                 {
                                     var obj = cmd2.ExecuteScalar();
                                     if (obj != null && obj != DBNull.Value)
-                                        tenSV = obj.ToString();
+                                        tenNguoiDung = obj.ToString();
                                 }
                                 catch
                                 {
-                                    // swallow: student table not present or other DB schema mismatch
-                                    tenSV = null;
+                                    tenNguoiDung = null;
+                                }
+                            }
+
+                            // Nếu không tìm thấy trong GIANG_VIEN, tìm trong SINH_VIEN
+                            if (string.IsNullOrEmpty(tenNguoiDung))
+                            {
+                                using (var cmd2 = new SqlCommand("SELECT HoTen FROM SINH_VIEN WHERE MaSV = @ma", conn))
+                                {
+                                    cmd2.Parameters.AddWithValue("@ma", maNguoiDung);
+                                    try
+                                    {
+                                        var obj = cmd2.ExecuteScalar();
+                                        if (obj != null && obj != DBNull.Value)
+                                            tenNguoiDung = obj.ToString();
+                                    }
+                                    catch
+                                    {
+                                        tenNguoiDung = null;
+                                    }
                                 }
                             }
                         }
 
-                        // Create frmMain passing student id and name
-                        var main = new frmMain(maNguoiDung, tenSV);
-                        main.FormClosed += (s, args) => this.Show();
-                        main.Show();
-                        this.Hide();
+                        // Điều hướng theo loại tài khoản
+                        if (string.Equals(loai, "Admin", StringComparison.OrdinalIgnoreCase))
+                        {
+                            //  Truyền thông tin Admin
+                            var admin = new frmAdmin(maNguoiDung, tenNguoiDung);
+                            admin.FormClosed += (s, args) => this.Show();
+                            admin.Show();
+                            this.Hide();
+                        }
+                        else
+                        {
+                            //  Truyền thông tin Sinh viên
+                            var main = new frmMain(maNguoiDung, tenNguoiDung);
+                            main.FormClosed += (s, args) => this.Show();
+                            main.Show();
+                            this.Hide();
+                        }
                     }
                 }
             }
