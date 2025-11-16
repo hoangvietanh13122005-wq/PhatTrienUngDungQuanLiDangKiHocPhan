@@ -19,6 +19,15 @@ namespace PhatTrienUngDungQuanLiDangKiHocPhan
         {
             InitializeComponent();
         }
+        public frmAdmin(string maCB, string tenCB) : this()
+        {
+            if (!string.IsNullOrEmpty(maCB))
+                lblten.Text = maCB;
+
+            if (!string.IsNullOrEmpty(tenCB))
+                lblma.Text = tenCB;
+
+        }
         private void LoadUserControl(UserControl uc)
         {
             panelmain.Controls.Clear();
