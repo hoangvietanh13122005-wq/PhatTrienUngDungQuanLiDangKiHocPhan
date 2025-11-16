@@ -33,8 +33,37 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DevExpress.Charts.v25.1.Core, Version=25.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.CodeParser.v25.1, Version=25.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Data.Desktop.v25.1, Version=25.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Data.v25.1, Version=25.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.DataAccess.v25.1, Version=25.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Drawing.v25.1, Version=25.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Office.v25.1.Core, Version=25.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Pdf.v25.1.Core, Version=25.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.PivotGrid.v25.1.Core, Version=25.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v25.1.Core, Version=25.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.RichEdit.v25.1.Core, Version=25.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v25.1.Export, Version=25.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Sparkline.v25.1.Core, Version=25.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v25.1, Version=25.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v25.1.UI, Version=25.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Xpo.v25.1, Version=25.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraCharts.v25.1, Version=25.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v25.1, Version=25.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraGauges.v25.1.Core, Version=25.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v25.1, Version=25.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v25.1, Version=25.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraReports.v25.1, Version=25.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v25.1.Extensions, Version=25.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="Guna.UI2, Version=2.0.4.7, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
+      <HintPath>..\packages\Guna.UI2.WinForms.2.0.4.7\lib\net48\Guna.UI2.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -52,8 +81,118 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormThemHocKi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormThemHocKi.Designer.cs">
+      <DependentUpon>FormThemHocKi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAdmin.Designer.cs">
+      <DependentUpon>frmAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDangNhap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDangNhap.Designer.cs">
+      <DependentUpon>frmDangNhap.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="rptDanhSachDangKy.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="rptDanhSachDangKy.Designer.cs">
+      <DependentUpon>rptDanhSachDangKy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="rptDanhSachLHP.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="rptDanhSachLHP.Designer.cs">
+      <DependentUpon>rptDanhSachLHP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="rptPhanCongGV.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="rptPhanCongGV.Designer.cs">
+      <DependentUpon>rptPhanCongGV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_QLGiangVien.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_QLGiangVien.Designer.cs">
+      <DependentUpon>UC_QLGiangVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_QLHocKy.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_QLHocKy.Designer.cs">
+      <DependentUpon>UC_QLHocKy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_QLHocPhan.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_QLHocPhan.Designer.cs">
+      <DependentUpon>UC_QLHocPhan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_QLLopHocPhan.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_QLLopHocPhan.Designer.cs">
+      <DependentUpon>UC_QLLopHocPhan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_QLSinhVien.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_QLSinhVien.Designer.cs">
+      <DependentUpon>UC_QLSinhVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_XepLopHocPhan.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_XepLopHocPhan.Designer.cs">
+      <DependentUpon>UC_XepLopHocPhan.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="FormThemHocKi.resx">
+      <DependentUpon>FormThemHocKi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAdmin.resx">
+      <DependentUpon>frmAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="frmSinhVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSinhVien.Designer.cs">
+      <DependentUpon>frmSinhVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ucDangKyTinChi.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucDangKyTinChi.Designer.cs">
+      <DependentUpon>ucDangKyTinChi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucLichSuDangKy.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucLichSuDangKy.Designer.cs">
+      <DependentUpon>ucLichSuDangKy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ucTraCuuHocPhan.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ucTraCuuHocPhan.Designer.cs">
+      <DependentUpon>ucTraCuuHocPhan.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="frmDangNhap.resx">
+      <DependentUpon>frmDangNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSinhVien.resx">
+      <DependentUpon>frmSinhVien.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -63,6 +202,43 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="rptDanhSachDangKy.resx">
+      <DependentUpon>rptDanhSachDangKy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptDanhSachLHP.resx">
+      <DependentUpon>rptDanhSachLHP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptPhanCongGV.resx">
+      <DependentUpon>rptPhanCongGV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucDangKyTinChi.resx">
+      <DependentUpon>ucDangKyTinChi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucLichSuDangKy.resx">
+      <DependentUpon>ucLichSuDangKy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ucTraCuuHocPhan.resx">
+      <DependentUpon>ucTraCuuHocPhan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_QLGiangVien.resx">
+      <DependentUpon>UC_QLGiangVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_QLHocKy.resx">
+      <DependentUpon>UC_QLHocKy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_QLHocPhan.resx">
+      <DependentUpon>UC_QLHocPhan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_QLLopHocPhan.resx">
+      <DependentUpon>UC_QLLopHocPhan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_QLSinhVien.resx">
+      <DependentUpon>UC_QLSinhVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_XepLopHocPhan.resx">
+      <DependentUpon>UC_XepLopHocPhan.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
