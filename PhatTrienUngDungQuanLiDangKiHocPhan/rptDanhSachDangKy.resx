@@ -117,7 +117,28 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="TrangThai.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
+  <data name="customSqlQuery1.Sql" xml:space="preserve">
+    <value>SELECT 
+    sv.MaSV,
+    sv.HoTen AS TenSinhVien,
+    dkhp.MaLHP,
+    mh.TenMH,
+    CONVERT(varchar(19), dkhp.NgayDangKy, 120) AS ThoiGian,
+    dkhp.TrangThaiDangKy AS HanhDong,
+    hk.MaHocKy,
+    hk.TenHocKy,
+    nh.MaNamHoc,
+    nh.TenNamHoc,
+    mh.SoTinChi
+FROM DANG_KY_HOC_PHAN dkhp
+INNER JOIN SINH_VIEN sv ON dkhp.MaSV = sv.MaSV
+INNER JOIN LOP_HOC_PHAN lhp ON dkhp.MaLHP = lhp.MaLHP
+INNER JOIN MON_HOC mh ON lhp.MaMH = mh.MaMH
+INNER JOIN HOC_KY hk ON lhp.MaHocKy = hk.MaHocKy
+INNER JOIN NAM_HOC nh ON hk.MaNamHoc = nh.MaNamHoc
+ORDER BY dkhp.NgayDangKy DESC, sv.MaSV;</value>
+  </data>
+  <data name="sqlDataSource1.ResultSchemaSerializable" xml:space="preserve">
+    <value>PERhdGFTZXQgTmFtZT0ic3FsRGF0YVNvdXJjZTEiPjxWaWV3IE5hbWU9IlF1ZXJ5Ij48RmllbGQgTmFtZT0iTWFTViIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJUZW5TaW5oVmllbiIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJNYUxIUCIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJUZW5NSCIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJUaG9pR2lhbiIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJIYW5oRG9uZyIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJNYUhvY0t5IiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IlRlbkhvY0t5IiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9Ik1hTmFtSG9jIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IlRlbk5hbUhvYyIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJTb1RpbkNoaSIgVHlwZT0iSW50MzIiIC8+PC9WaWV3PjwvRGF0YVNldD4=</value>
+  </data>
 </root>

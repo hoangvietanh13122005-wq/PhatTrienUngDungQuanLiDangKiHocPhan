@@ -6,21 +6,14 @@ namespace PhatTrienUngDungQuanLiDangKiHocPhan
     {
         private System.ComponentModel.IContainer components = null;
         private System.Windows.Forms.Panel panelTop;
-        private System.Windows.Forms.ComboBox cboTimTheo;
-        private System.Windows.Forms.TextBox txtTuKhoa;
+        private System.Windows.Forms.ComboBox cboNamHoc;
+        private System.Windows.Forms.TextBox txtHocKy;
         private System.Windows.Forms.Button btnTimKiem;
         private System.Windows.Forms.Button btnLamMoi;
         private System.Windows.Forms.DataGridView dgvDangKy;
         private System.Windows.Forms.Label lblHeader;
         private System.Windows.Forms.Label lblTimTheo;
         private System.Windows.Forms.Label lblTuKhoa;
-
-        private System.Windows.Forms.DataGridViewTextBoxColumn colMaSV;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colTenSV;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colMaHP;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colTenHP;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colNgayDangKy;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colTrangThai;
 
         protected override void Dispose(bool disposing)
         {
@@ -34,19 +27,20 @@ namespace PhatTrienUngDungQuanLiDangKiHocPhan
         {
             this.panelTop = new System.Windows.Forms.Panel();
             this.lblTimTheo = new System.Windows.Forms.Label();
-            this.cboTimTheo = new System.Windows.Forms.ComboBox();
+            this.cboNamHoc = new System.Windows.Forms.ComboBox();
             this.lblTuKhoa = new System.Windows.Forms.Label();
-            this.txtTuKhoa = new System.Windows.Forms.TextBox();
+            this.txtHocKy = new System.Windows.Forms.TextBox();
             this.btnTimKiem = new System.Windows.Forms.Button();
             this.btnLamMoi = new System.Windows.Forms.Button();
             this.dgvDangKy = new System.Windows.Forms.DataGridView();
-            this.colMaSV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTenSV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colMaHP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTenHP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colNgayDangKy = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaSV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HoTen = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaLHP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenMH = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ThoiGian = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HanhDong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblHeader = new System.Windows.Forms.Label();
+            this.btnInBaoCao = new System.Windows.Forms.Button();
             this.panelTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDangKy)).BeginInit();
             this.SuspendLayout();
@@ -54,10 +48,11 @@ namespace PhatTrienUngDungQuanLiDangKiHocPhan
             // panelTop
             // 
             this.panelTop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(240)))), ((int)(((byte)(250)))));
+            this.panelTop.Controls.Add(this.btnInBaoCao);
             this.panelTop.Controls.Add(this.lblTimTheo);
-            this.panelTop.Controls.Add(this.cboTimTheo);
+            this.panelTop.Controls.Add(this.cboNamHoc);
             this.panelTop.Controls.Add(this.lblTuKhoa);
-            this.panelTop.Controls.Add(this.txtTuKhoa);
+            this.panelTop.Controls.Add(this.txtHocKy);
             this.panelTop.Controls.Add(this.btnTimKiem);
             this.panelTop.Controls.Add(this.btnLamMoi);
             this.panelTop.Dock = System.Windows.Forms.DockStyle.Top;
@@ -73,21 +68,21 @@ namespace PhatTrienUngDungQuanLiDangKiHocPhan
             this.lblTimTheo.Name = "lblTimTheo";
             this.lblTimTheo.Size = new System.Drawing.Size(125, 23);
             this.lblTimTheo.TabIndex = 0;
-            this.lblTimTheo.Text = "Tìm theo";
+            this.lblTimTheo.Text = "Năm học";
             this.lblTimTheo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // cboTimTheo
+            // cboNamHoc
             // 
-            this.cboTimTheo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboTimTheo.Items.AddRange(new object[] {
+            this.cboNamHoc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboNamHoc.Items.AddRange(new object[] {
             "Mã sinh viên",
             "Tên sinh viên",
             "Mã học phần",
             "Tên học phần"});
-            this.cboTimTheo.Location = new System.Drawing.Point(152, 27);
-            this.cboTimTheo.Name = "cboTimTheo";
-            this.cboTimTheo.Size = new System.Drawing.Size(150, 24);
-            this.cboTimTheo.TabIndex = 1;
+            this.cboNamHoc.Location = new System.Drawing.Point(152, 27);
+            this.cboNamHoc.Name = "cboNamHoc";
+            this.cboNamHoc.Size = new System.Drawing.Size(150, 24);
+            this.cboNamHoc.TabIndex = 1;
             // 
             // lblTuKhoa
             // 
@@ -95,15 +90,15 @@ namespace PhatTrienUngDungQuanLiDangKiHocPhan
             this.lblTuKhoa.Name = "lblTuKhoa";
             this.lblTuKhoa.Size = new System.Drawing.Size(83, 23);
             this.lblTuKhoa.TabIndex = 2;
-            this.lblTuKhoa.Text = "Từ khóa";
+            this.lblTuKhoa.Text = "Học kỳ";
             this.lblTuKhoa.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // txtTuKhoa
+            // txtHocKy
             // 
-            this.txtTuKhoa.Location = new System.Drawing.Point(397, 28);
-            this.txtTuKhoa.Name = "txtTuKhoa";
-            this.txtTuKhoa.Size = new System.Drawing.Size(200, 22);
-            this.txtTuKhoa.TabIndex = 3;
+            this.txtHocKy.Location = new System.Drawing.Point(397, 28);
+            this.txtHocKy.Name = "txtHocKy";
+            this.txtHocKy.Size = new System.Drawing.Size(200, 22);
+            this.txtHocKy.TabIndex = 3;
             // 
             // btnTimKiem
             // 
@@ -138,12 +133,12 @@ namespace PhatTrienUngDungQuanLiDangKiHocPhan
             this.dgvDangKy.BackgroundColor = System.Drawing.Color.White;
             this.dgvDangKy.ColumnHeadersHeight = 29;
             this.dgvDangKy.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colMaSV,
-            this.colTenSV,
-            this.colMaHP,
-            this.colTenHP,
-            this.colNgayDangKy,
-            this.colTrangThai});
+            this.MaSV,
+            this.HoTen,
+            this.MaLHP,
+            this.TenMH,
+            this.ThoiGian,
+            this.HanhDong});
             this.dgvDangKy.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvDangKy.Location = new System.Drawing.Point(0, 120);
             this.dgvDangKy.Name = "dgvDangKy";
@@ -153,47 +148,53 @@ namespace PhatTrienUngDungQuanLiDangKiHocPhan
             this.dgvDangKy.Size = new System.Drawing.Size(1113, 446);
             this.dgvDangKy.TabIndex = 2;
             // 
-            // colMaSV
+            // MaSV
             // 
-            this.colMaSV.HeaderText = "Mã sinh viên";
-            this.colMaSV.MinimumWidth = 6;
-            this.colMaSV.Name = "colMaSV";
-            this.colMaSV.ReadOnly = true;
+            this.MaSV.DataPropertyName = "MaSV";
+            this.MaSV.HeaderText = "Mã sinh viên";
+            this.MaSV.MinimumWidth = 6;
+            this.MaSV.Name = "MaSV";
+            this.MaSV.ReadOnly = true;
             // 
-            // colTenSV
+            // HoTen
             // 
-            this.colTenSV.HeaderText = "Tên sinh viên";
-            this.colTenSV.MinimumWidth = 6;
-            this.colTenSV.Name = "colTenSV";
-            this.colTenSV.ReadOnly = true;
+            this.HoTen.DataPropertyName = "HoTen";
+            this.HoTen.HeaderText = "Tên sinh viên";
+            this.HoTen.MinimumWidth = 6;
+            this.HoTen.Name = "HoTen";
+            this.HoTen.ReadOnly = true;
             // 
-            // colMaHP
+            // MaLHP
             // 
-            this.colMaHP.HeaderText = "Mã học phần";
-            this.colMaHP.MinimumWidth = 6;
-            this.colMaHP.Name = "colMaHP";
-            this.colMaHP.ReadOnly = true;
+            this.MaLHP.DataPropertyName = "MaLHP";
+            this.MaLHP.HeaderText = "Mã LHP";
+            this.MaLHP.MinimumWidth = 6;
+            this.MaLHP.Name = "MaLHP";
+            this.MaLHP.ReadOnly = true;
             // 
-            // colTenHP
+            // TenMH
             // 
-            this.colTenHP.HeaderText = "Tên học phần";
-            this.colTenHP.MinimumWidth = 6;
-            this.colTenHP.Name = "colTenHP";
-            this.colTenHP.ReadOnly = true;
+            this.TenMH.DataPropertyName = "TenMH";
+            this.TenMH.HeaderText = "Tên học phần";
+            this.TenMH.MinimumWidth = 6;
+            this.TenMH.Name = "TenMH";
+            this.TenMH.ReadOnly = true;
             // 
-            // colNgayDangKy
+            // ThoiGian
             // 
-            this.colNgayDangKy.HeaderText = "Ngày đăng ký";
-            this.colNgayDangKy.MinimumWidth = 6;
-            this.colNgayDangKy.Name = "colNgayDangKy";
-            this.colNgayDangKy.ReadOnly = true;
+            this.ThoiGian.DataPropertyName = "ThoiGian";
+            this.ThoiGian.HeaderText = "Thời gian";
+            this.ThoiGian.MinimumWidth = 6;
+            this.ThoiGian.Name = "ThoiGian";
+            this.ThoiGian.ReadOnly = true;
             // 
-            // colTrangThai
+            // HanhDong
             // 
-            this.colTrangThai.HeaderText = "Trạng thái";
-            this.colTrangThai.MinimumWidth = 6;
-            this.colTrangThai.Name = "colTrangThai";
-            this.colTrangThai.ReadOnly = true;
+            this.HanhDong.DataPropertyName = "HanhDong";
+            this.HanhDong.HeaderText = "Thao tác";
+            this.HanhDong.MinimumWidth = 6;
+            this.HanhDong.Name = "HanhDong";
+            this.HanhDong.ReadOnly = true;
             // 
             // lblHeader
             // 
@@ -208,6 +209,19 @@ namespace PhatTrienUngDungQuanLiDangKiHocPhan
             this.lblHeader.TabIndex = 0;
             this.lblHeader.Text = "QUẢN LÍ SINH VIÊN";
             this.lblHeader.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // btnInBaoCao
+            // 
+            this.btnInBaoCao.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(215)))));
+            this.btnInBaoCao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnInBaoCao.ForeColor = System.Drawing.Color.White;
+            this.btnInBaoCao.Location = new System.Drawing.Point(937, 20);
+            this.btnInBaoCao.Name = "btnInBaoCao";
+            this.btnInBaoCao.Size = new System.Drawing.Size(151, 30);
+            this.btnInBaoCao.TabIndex = 6;
+            this.btnInBaoCao.Text = "Xuất danh sách";
+            this.btnInBaoCao.UseVisualStyleBackColor = false;
+            this.btnInBaoCao.Click += new System.EventHandler(this.btnInBaoCao_Click);
             // 
             // UC_QLSinhVien
             // 
@@ -226,5 +240,13 @@ namespace PhatTrienUngDungQuanLiDangKiHocPhan
 
         }
         #endregion
+
+        private DataGridViewTextBoxColumn MaSV;
+        private DataGridViewTextBoxColumn HoTen;
+        private DataGridViewTextBoxColumn MaLHP;
+        private DataGridViewTextBoxColumn TenMH;
+        private DataGridViewTextBoxColumn ThoiGian;
+        private DataGridViewTextBoxColumn HanhDong;
+        private Button btnInBaoCao;
     }
 }

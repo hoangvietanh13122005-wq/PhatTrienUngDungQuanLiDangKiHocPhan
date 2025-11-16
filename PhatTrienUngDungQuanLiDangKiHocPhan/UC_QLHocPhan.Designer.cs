@@ -37,16 +37,15 @@
             this.btnHuy = new System.Windows.Forms.Button();
             this.lblHeader = new System.Windows.Forms.Label();
             this.dgvHocPhan = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtMaHP = new System.Windows.Forms.TextBox();
             this.txtTenHP = new System.Windows.Forms.TextBox();
             this.txtSoTinChi = new System.Windows.Forms.TextBox();
             this.txtDieuKien = new System.Windows.Forms.TextBox();
             this.cboLoai = new System.Windows.Forms.ComboBox();
+            this.MaMH = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenMH = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SoTinChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaMonTienQuyet = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelTop.SuspendLayout();
             this.panelBottom.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHocPhan)).BeginInit();
@@ -152,7 +151,7 @@
             this.btnSua.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(215)))));
             this.btnSua.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSua.ForeColor = System.Drawing.Color.White;
-            this.btnSua.Location = new System.Drawing.Point(20, 150);
+            this.btnSua.Location = new System.Drawing.Point(106, 150);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(80, 30);
             this.btnSua.TabIndex = 6;
@@ -165,7 +164,7 @@
             this.btnXoa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(215)))));
             this.btnXoa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnXoa.ForeColor = System.Drawing.Color.White;
-            this.btnXoa.Location = new System.Drawing.Point(20, 150);
+            this.btnXoa.Location = new System.Drawing.Point(192, 150);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(80, 30);
             this.btnXoa.TabIndex = 7;
@@ -178,7 +177,7 @@
             this.btnLuu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(215)))));
             this.btnLuu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLuu.ForeColor = System.Drawing.Color.White;
-            this.btnLuu.Location = new System.Drawing.Point(20, 150);
+            this.btnLuu.Location = new System.Drawing.Point(278, 150);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(80, 30);
             this.btnLuu.TabIndex = 8;
@@ -191,7 +190,7 @@
             this.btnHuy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(215)))));
             this.btnHuy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHuy.ForeColor = System.Drawing.Color.White;
-            this.btnHuy.Location = new System.Drawing.Point(20, 150);
+            this.btnHuy.Location = new System.Drawing.Point(364, 150);
             this.btnHuy.Name = "btnHuy";
             this.btnHuy.Size = new System.Drawing.Size(80, 30);
             this.btnHuy.TabIndex = 9;
@@ -220,11 +219,10 @@
             this.dgvHocPhan.BackgroundColor = System.Drawing.Color.White;
             this.dgvHocPhan.ColumnHeadersHeight = 29;
             this.dgvHocPhan.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4,
-            this.dataGridViewTextBoxColumn5});
+            this.MaMH,
+            this.TenMH,
+            this.SoTinChi,
+            this.MaMonTienQuyet});
             this.dgvHocPhan.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvHocPhan.Location = new System.Drawing.Point(0, 120);
             this.dgvHocPhan.Name = "dgvHocPhan";
@@ -233,41 +231,6 @@
             this.dgvHocPhan.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvHocPhan.Size = new System.Drawing.Size(1095, 277);
             this.dgvHocPhan.TabIndex = 0;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.HeaderText = "Mã học phần";
-            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.HeaderText = "Tên học phần";
-            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.HeaderText = "Số tín chỉ";
-            this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.HeaderText = "Loại";
-            this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.HeaderText = "Điều kiện tiên quyết";
-            this.dataGridViewTextBoxColumn5.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
             // 
             // txtMaHP
             // 
@@ -307,6 +270,38 @@
             this.cboLoai.Size = new System.Drawing.Size(121, 24);
             this.cboLoai.TabIndex = 0;
             // 
+            // MaMH
+            // 
+            this.MaMH.DataPropertyName = "MaMH";
+            this.MaMH.HeaderText = "Mã học phần";
+            this.MaMH.MinimumWidth = 6;
+            this.MaMH.Name = "MaMH";
+            this.MaMH.ReadOnly = true;
+            // 
+            // TenMH
+            // 
+            this.TenMH.DataPropertyName = "TenMH";
+            this.TenMH.HeaderText = "Tên học phần";
+            this.TenMH.MinimumWidth = 6;
+            this.TenMH.Name = "TenMH";
+            this.TenMH.ReadOnly = true;
+            // 
+            // SoTinChi
+            // 
+            this.SoTinChi.DataPropertyName = "SoTinChi";
+            this.SoTinChi.HeaderText = "Số tín chỉ";
+            this.SoTinChi.MinimumWidth = 6;
+            this.SoTinChi.Name = "SoTinChi";
+            this.SoTinChi.ReadOnly = true;
+            // 
+            // MaMonTienQuyet
+            // 
+            this.MaMonTienQuyet.DataPropertyName = "TenMonTienQuyet";
+            this.MaMonTienQuyet.HeaderText = "Điều kiện tiên quyết";
+            this.MaMonTienQuyet.MinimumWidth = 6;
+            this.MaMonTienQuyet.Name = "MaMonTienQuyet";
+            this.MaMonTienQuyet.ReadOnly = true;
+            // 
             // UC_QLHocPhan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -329,10 +324,9 @@
         #endregion
 
         private System.Windows.Forms.Label lblTimTheo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaMH;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenMH;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SoTinChi;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaMonTienQuyet;
     }
 }

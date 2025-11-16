@@ -26,14 +26,16 @@
             this.lblTitle = new System.Windows.Forms.Label();
             this.lblSubtitle = new System.Windows.Forms.Label();
             this.btnThemHocKi = new System.Windows.Forms.Button();
+            this.btnSuaHocKi = new System.Windows.Forms.Button();
             this.dgvHocKi = new System.Windows.Forms.DataGridView();
-            this.panelTop = new System.Windows.Forms.Panel();
-            this.colMaHocKi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colMaHocKy = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colnamhoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTenHocKi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTenHocKy = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colNgayBatDau = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colNgayKetThuc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colNgayBatDauDK = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colNgayKetThucDK = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panelTop = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHocKi)).BeginInit();
             this.panelTop.SuspendLayout();
             this.SuspendLayout();
@@ -63,7 +65,7 @@
             // btnThemHocKi
             // 
             this.btnThemHocKi.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnThemHocKi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(110)))), ((int)(((byte)(255)))));
+            this.btnThemHocKi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(130)))), ((int)(((byte)(230)))));
             this.btnThemHocKi.FlatAppearance.BorderSize = 0;
             this.btnThemHocKi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnThemHocKi.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
@@ -75,6 +77,21 @@
             this.btnThemHocKi.Text = "+ Thêm học kỳ mới";
             this.btnThemHocKi.UseVisualStyleBackColor = false;
             this.btnThemHocKi.Click += new System.EventHandler(this.btnThemHocKi_Click);
+            // 
+            // btnSuaHocKi
+            // 
+            this.btnSuaHocKi.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSuaHocKi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(130)))), ((int)(((byte)(230)))));
+            this.btnSuaHocKi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSuaHocKi.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.btnSuaHocKi.ForeColor = System.Drawing.Color.White;
+            this.btnSuaHocKi.Location = new System.Drawing.Point(1040, 25);
+            this.btnSuaHocKi.Name = "btnSuaHocKi";
+            this.btnSuaHocKi.Size = new System.Drawing.Size(180, 35);
+            this.btnSuaHocKi.TabIndex = 8;
+            this.btnSuaHocKi.Text = "Sửa học kỳ đã chọn";
+            this.btnSuaHocKi.UseVisualStyleBackColor = false;
+            this.btnSuaHocKi.Click += new System.EventHandler(this.btnSuaHocKi_Click);
             // 
             // dgvHocKi
             // 
@@ -93,12 +110,13 @@
             this.dgvHocKi.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvHocKi.ColumnHeadersHeight = 40;
             this.dgvHocKi.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colMaHocKi,
+            this.colMaHocKy,
             this.colnamhoc,
-            this.colTenHocKi,
+            this.colTenHocKy,
             this.colNgayBatDau,
             this.colNgayKetThuc,
-            this.colTrangThai});
+            this.colNgayBatDauDK,
+            this.colNgayKetThucDK});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F);
@@ -118,54 +136,68 @@
             this.dgvHocKi.Size = new System.Drawing.Size(1428, 439);
             this.dgvHocKi.TabIndex = 0;
             // 
-            // panelTop
+            // colMaHocKy
             // 
-            this.panelTop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(204)))));
-            this.panelTop.Controls.Add(this.lblTitle);
-            this.panelTop.Controls.Add(this.lblSubtitle);
-            this.panelTop.Controls.Add(this.btnThemHocKi);
-            this.panelTop.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelTop.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.panelTop.Location = new System.Drawing.Point(0, 0);
-            this.panelTop.Name = "panelTop";
-            this.panelTop.Size = new System.Drawing.Size(1428, 80);
-            this.panelTop.TabIndex = 1;
-            // 
-            // colMaHocKi
-            // 
-            this.colMaHocKi.HeaderText = "Mã học kì";
-            this.colMaHocKi.MinimumWidth = 6;
-            this.colMaHocKi.Name = "colMaHocKi";
+            this.colMaHocKy.DataPropertyName = "MaHocKy";
+            this.colMaHocKy.HeaderText = "Mã học kì";
+            this.colMaHocKy.MinimumWidth = 6;
+            this.colMaHocKy.Name = "colMaHocKy";
             // 
             // colnamhoc
             // 
+            this.colnamhoc.DataPropertyName = "TenNamHoc";
             this.colnamhoc.HeaderText = "Năm học";
             this.colnamhoc.MinimumWidth = 6;
             this.colnamhoc.Name = "colnamhoc";
             // 
-            // colTenHocKi
+            // colTenHocKy
             // 
-            this.colTenHocKi.HeaderText = "Tên học kỳ";
-            this.colTenHocKi.MinimumWidth = 6;
-            this.colTenHocKi.Name = "colTenHocKi";
+            this.colTenHocKy.DataPropertyName = "TenHocKy";
+            this.colTenHocKy.HeaderText = "Tên học kỳ";
+            this.colTenHocKy.MinimumWidth = 6;
+            this.colTenHocKy.Name = "colTenHocKy";
             // 
             // colNgayBatDau
             // 
+            this.colNgayBatDau.DataPropertyName = "NgayBatDau";
             this.colNgayBatDau.HeaderText = "Ngày bắt đầu";
             this.colNgayBatDau.MinimumWidth = 6;
             this.colNgayBatDau.Name = "colNgayBatDau";
             // 
             // colNgayKetThuc
             // 
+            this.colNgayKetThuc.DataPropertyName = "NgayKetThuc";
             this.colNgayKetThuc.HeaderText = "Ngày kết thúc";
             this.colNgayKetThuc.MinimumWidth = 6;
             this.colNgayKetThuc.Name = "colNgayKetThuc";
             // 
-            // colTrangThai
+            // colNgayBatDauDK
             // 
-            this.colTrangThai.HeaderText = "Trạng thái";
-            this.colTrangThai.MinimumWidth = 6;
-            this.colTrangThai.Name = "colTrangThai";
+            this.colNgayBatDauDK.DataPropertyName = "NgayBatDauDK";
+            this.colNgayBatDauDK.HeaderText = "Ngày bắt đầu ĐK";
+            this.colNgayBatDauDK.MinimumWidth = 6;
+            this.colNgayBatDauDK.Name = "colNgayBatDauDK";
+            // 
+            // colNgayKetThucDK
+            // 
+            this.colNgayKetThucDK.DataPropertyName = "NgayKetThucDK";
+            this.colNgayKetThucDK.HeaderText = "Ngày kết thúc ĐK";
+            this.colNgayKetThucDK.MinimumWidth = 6;
+            this.colNgayKetThucDK.Name = "colNgayKetThucDK";
+            // 
+            // panelTop
+            // 
+            this.panelTop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(102)))), ((int)(((byte)(204)))));
+            this.panelTop.Controls.Add(this.lblTitle);
+            this.panelTop.Controls.Add(this.lblSubtitle);
+            this.panelTop.Controls.Add(this.btnThemHocKi);
+            this.panelTop.Controls.Add(this.btnSuaHocKi);
+            this.panelTop.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelTop.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.panelTop.Location = new System.Drawing.Point(0, 0);
+            this.panelTop.Name = "panelTop";
+            this.panelTop.Size = new System.Drawing.Size(1428, 80);
+            this.panelTop.TabIndex = 1;
             // 
             // UC_QLHocKi
             // 
@@ -186,13 +218,15 @@
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Label lblSubtitle;
         private System.Windows.Forms.Button btnThemHocKi;
+        private System.Windows.Forms.Button btnSuaHocKi;
         private System.Windows.Forms.DataGridView dgvHocKi;
         private System.Windows.Forms.Panel panelTop;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colMaHocKi;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colMaHocKy;
         private System.Windows.Forms.DataGridViewTextBoxColumn colnamhoc;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colTenHocKi;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colTenHocKy;
         private System.Windows.Forms.DataGridViewTextBoxColumn colNgayBatDau;
         private System.Windows.Forms.DataGridViewTextBoxColumn colNgayKetThuc;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colTrangThai;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colNgayBatDauDK;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colNgayKetThucDK;
     }
 }

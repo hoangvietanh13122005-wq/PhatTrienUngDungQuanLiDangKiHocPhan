@@ -117,7 +117,49 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="TrangThai.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
+  <data name="customSqlQuery1.Sql" xml:space="preserve">
+    <value>SELECT 
+    LHP.MaLHP,
+    LHP.MaMH,
+    MH.TenMH,
+    CONVERT(varchar(10), LHP.ThoiGianBatDau, 103) AS ThoiGianBatDau,
+CONVERT(varchar(10), LHP.ThoiGianKetThuc, 103) AS ThoiGianKetThuc,
+    LHP.MaPhong,
+    GV.HoTen AS TenGiangVien,
+    LHP.SiSoToiDa,
+    COUNT(DKHP.MaSV) AS SoSVDangKy,
+
+    
+    CAST(COUNT(DKHP.MaSV) AS NVARCHAR) 
+        + '/' + CAST(LHP.SiSoToiDa AS NVARCHAR) AS SiSo,
+
+    LH.TenLichHoc,
+    HK.MaHocKy,
+    HK.TenHocKy,
+    NH.MaNamHoc,
+    NH.TenNamHoc
+FROM LOP_HOC_PHAN LHP
+INNER JOIN MON_HOC MH ON LHP.MaMH = MH.MaMH
+LEFT JOIN GIANG_VIEN GV ON LHP.MaGV = GV.MaGV
+INNER JOIN HOC_KY HK ON LHP.MaHocKy = HK.MaHocKy
+INNER JOIN NAM_HOC NH ON HK.MaNamHoc = NH.MaNamHoc
+INNER JOIN LICH_HOC LH ON LHP.MaLichHoc = LH.MaLichHoc
+LEFT JOIN DANG_KY_HOC_PHAN DKHP 
+       ON LHP.MaLHP = DKHP.MaLHP
+      AND DKHP.TrangThaiDangKy = N'Đăng ký thành công'
+WHERE 
+    LHP.DaHuy = 0
+GROUP BY 
+    LHP.MaLHP, LHP.MaMH, MH.TenMH,
+    LHP.ThoiGianBatDau, LHP.ThoiGianKetThuc,
+    LHP.MaPhong, GV.HoTen, 
+    LHP.SiSoToiDa, LH.TenLichHoc,
+    HK.MaHocKy, HK.TenHocKy,
+    NH.MaNamHoc, NH.TenNamHoc
+ORDER BY LHP.ThoiGianBatDau;
+</value>
+  </data>
+  <data name="sqlDataSource1.ResultSchemaSerializable" xml:space="preserve">
+    <value>PERhdGFTZXQgTmFtZT0ic3FsRGF0YVNvdXJjZTEiPjxWaWV3IE5hbWU9IlF1ZXJ5Ij48RmllbGQgTmFtZT0iTWFMSFAiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iTWFNSCIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJUZW5NSCIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJUaG9pR2lhbkJhdERhdSIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJUaG9pR2lhbktldFRodWMiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iTWFQaG9uZyIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJUZW5HaWFuZ1ZpZW4iIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iU2lTb1RvaURhIiBUeXBlPSJJbnQzMiIgLz48RmllbGQgTmFtZT0iU29TVkRhbmdLeSIgVHlwZT0iSW50MzIiIC8+PEZpZWxkIE5hbWU9IlNpU28iIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iVGVuTGljaEhvYyIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJNYUhvY0t5IiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IlRlbkhvY0t5IiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9Ik1hTmFtSG9jIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IlRlbk5hbUhvYyIgVHlwZT0iU3RyaW5nIiAvPjwvVmlldz48L0RhdGFTZXQ+</value>
+  </data>
 </root>

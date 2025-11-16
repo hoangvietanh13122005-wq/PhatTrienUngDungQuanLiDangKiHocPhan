@@ -32,12 +32,22 @@ namespace PhatTrienUngDungQuanLiDangKiHocPhan
         private void btnlophocphan_Click(object sender, EventArgs e)
         {
             var ucLopHocPhan = new UC_QLLopHocPhan();
-            // Gắn event mở UC_XepLopHocPhan
+
+            // Gắn event mở UC_XepLopHocPhan dưới dạng Form popup
             ucLopHocPhan.MoUCXepLopHocPhan += () =>
             {
-                LoadUserControl(new UC_XepLopHocPhan());
+                using (Form popup = new Form())
+                {
+                    popup.StartPosition = FormStartPosition.CenterParent;
+                    popup.Size = new Size(800, 600);
+                    var uc = new UC_XepLopHocPhan();
+                    uc.Dock = DockStyle.Fill;
+                    popup.Controls.Add(uc);
+                    popup.ShowDialog(); // đây là modal popup
+                }
             };
-            LoadUserControl(ucLopHocPhan);
+
+            LoadUserControl(ucLopHocPhan); // load UC_QLLopHocPhan vào panelmain
         }
 
 

@@ -193,9 +193,9 @@
             // pnlThongTinSV
             // 
             this.pnlThongTinSV.BackColor = System.Drawing.Color.Transparent;
+            this.pnlThongTinSV.Controls.Add(this.lblTenSV);
             this.pnlThongTinSV.Controls.Add(this.lblMSV);
             this.pnlThongTinSV.Controls.Add(this.guna2CirclePictureBox1);
-            this.pnlThongTinSV.Controls.Add(this.lblTenSV);
             this.pnlThongTinSV.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(170)))), ((int)(((byte)(255)))));
             this.pnlThongTinSV.Location = new System.Drawing.Point(26, 20);
             this.pnlThongTinSV.Name = "pnlThongTinSV";
@@ -211,9 +211,9 @@
             this.lblMSV.BackColor = System.Drawing.Color.Transparent;
             this.lblMSV.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMSV.ForeColor = System.Drawing.Color.Transparent;
-            this.lblMSV.Location = new System.Drawing.Point(68, 106);
+            this.lblMSV.Location = new System.Drawing.Point(34, 108);
             this.lblMSV.Name = "lblMSV";
-            this.lblMSV.Size = new System.Drawing.Size(92, 21);
+            this.lblMSV.Size = new System.Drawing.Size(158, 21);
             this.lblMSV.TabIndex = 2;
             this.lblMSV.Text = "MSV";
             // 
@@ -233,13 +233,12 @@
             // lblTenSV
             // 
             this.lblTenSV.AutoSize = false;
-            this.lblTenSV.AutoSizeHeightOnly = true;
             this.lblTenSV.BackColor = System.Drawing.Color.Transparent;
             this.lblTenSV.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTenSV.ForeColor = System.Drawing.Color.Transparent;
-            this.lblTenSV.Location = new System.Drawing.Point(68, 78);
+            this.lblTenSV.Location = new System.Drawing.Point(34, 78);
             this.lblTenSV.Name = "lblTenSV";
-            this.lblTenSV.Size = new System.Drawing.Size(92, 21);
+            this.lblTenSV.Size = new System.Drawing.Size(310, 34);
             this.lblTenSV.TabIndex = 1;
             this.lblTenSV.Text = "TenSV";
             // 
@@ -280,7 +279,6 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel lblTenDaihoc;
         private Guna.UI2.WinForms.Guna2CirclePictureBox picLogo;
         private Guna.UI2.WinForms.Guna2Panel pnlSidebar;
-        private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox1;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblMSV;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblTenSV;
         private Guna.UI2.WinForms.Guna2ShadowPanel pnlThongTinSV;
@@ -290,6 +288,7 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel lblChucNang;
         private Guna.UI2.WinForms.Guna2Panel pnlMainContent;
         private Guna.UI2.WinForms.Guna2Button btnDangXuat;
+        private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox1;
     }
 }
 

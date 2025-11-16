@@ -9,7 +9,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-
 namespace PhatTrienUngDungQuanLiDangKiHocPhan
 {
     public partial class frmDangNhap : Form
@@ -55,6 +54,7 @@ namespace PhatTrienUngDungQuanLiDangKiHocPhan
 
                         var loai = reader["LoaiTaiKhoan"]?.ToString();
                         var trangThai = reader["TrangThai"]?.ToString();
+                        var maNguoiDung = reader["MaNguoiDung"]?.ToString();
 
                         if (!string.Equals(trangThai, "Hoạt động", StringComparison.OrdinalIgnoreCase))
                         {
@@ -62,11 +62,40 @@ namespace PhatTrienUngDungQuanLiDangKiHocPhan
                             return;
                         }
 
-                        var main = loai.Equals("Admin", StringComparison.OrdinalIgnoreCase) ? (Form)new frmAdmin() : new frmMain();
+                        if (string.Equals(loai, "Admin", StringComparison.OrdinalIgnoreCase))
+                        {
+                            var admin = new frmAdmin();
+                            admin.FormClosed += (s, args) => this.Show();
+                            admin.Show();
+                            this.Hide();
+                            return;
+                        }
+                        reader.Close();
+                        // For student accounts: try to fetch student name (if you have a student table)
+                        string tenSV = null;
+                        if (!string.IsNullOrEmpty(maNguoiDung))
+                        {
+                            using (var cmd2 = new SqlCommand("SELECT HoTen FROM SINH_VIEN WHERE MaSV = @ma", conn))
+                            {
+                                cmd2.Parameters.AddWithValue("@ma", maNguoiDung);
+                                // If SINH_VIEN doesn't exist in your DB, this will throw; adjust table/column name as needed.
+                                try
+                                {
+                                    var obj = cmd2.ExecuteScalar();
+                                    if (obj != null && obj != DBNull.Value)
+                                        tenSV = obj.ToString();
+                                }
+                                catch
+                                {
+                                    // swallow: student table not present or other DB schema mismatch
+                                    tenSV = null;
+                                }
+                            }
+                        }
 
-                        // IMPORTANT: when main is closed, re-show the original login form (do not Close it)
+                        // Create frmMain passing student id and name
+                        var main = new frmMain(maNguoiDung, tenSV);
                         main.FormClosed += (s, args) => this.Show();
-
                         main.Show();
                         this.Hide();
                     }

@@ -53,17 +53,17 @@ namespace PhatTrienUngDungQuanLiDangKiHocPhan
             this.STC = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnCol = new System.Windows.Forms.DataGridViewButtonColumn();
             this.dgvLopHocPhan = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.MaLHP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaLH = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SoChoTrong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnDangKy = new System.Windows.Forms.DataGridViewButtonColumn();
             this.pnlThongTinDangKy = new Guna.UI2.WinForms.Guna2Panel();
             this.dgvDaDangKy = new Guna.UI2.WinForms.Guna2DataGridView();
             this.TenMon = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NameLHP = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblTongTinChi = new System.Windows.Forms.Label();
             this.lblTitle = new System.Windows.Forms.Label();
-            this.MaLHP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaLH = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SoChoTrong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnDangKy = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panelTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMonHoc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLopHocPhan)).BeginInit();
@@ -106,7 +106,7 @@ namespace PhatTrienUngDungQuanLiDangKiHocPhan
             this.cboChuongTrinh.ItemHeight = 30;
             this.cboChuongTrinh.Location = new System.Drawing.Point(190, 15);
             this.cboChuongTrinh.Name = "cboChuongTrinh";
-            this.cboChuongTrinh.Size = new System.Drawing.Size(300, 36);
+            this.cboChuongTrinh.Size = new System.Drawing.Size(366, 36);
             this.cboChuongTrinh.TabIndex = 1;
             // 
             // dgvMonHoc
@@ -249,6 +249,38 @@ namespace PhatTrienUngDungQuanLiDangKiHocPhan
             this.dgvLopHocPhan.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvLopHocPhan.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             // 
+            // MaLHP
+            // 
+            this.MaLHP.HeaderText = "Mã lớp HP";
+            this.MaLHP.MinimumWidth = 6;
+            this.MaLHP.Name = "MaLHP";
+            // 
+            // MaLH
+            // 
+            this.MaLH.HeaderText = "Lịch học";
+            this.MaLH.MinimumWidth = 6;
+            this.MaLH.Name = "MaLH";
+            // 
+            // TenGV
+            // 
+            this.TenGV.HeaderText = "Giảng viên";
+            this.TenGV.MinimumWidth = 6;
+            this.TenGV.Name = "TenGV";
+            // 
+            // SoChoTrong
+            // 
+            this.SoChoTrong.HeaderText = "Số chỗ trống";
+            this.SoChoTrong.MinimumWidth = 6;
+            this.SoChoTrong.Name = "SoChoTrong";
+            // 
+            // btnDangKy
+            // 
+            this.btnDangKy.HeaderText = "";
+            this.btnDangKy.MinimumWidth = 6;
+            this.btnDangKy.Name = "btnDangKy";
+            this.btnDangKy.Text = "Đăng ký";
+            this.btnDangKy.UseColumnTextForButtonValue = true;
+            // 
             // pnlThongTinDangKy
             // 
             this.pnlThongTinDangKy.Controls.Add(this.dgvDaDangKy);
@@ -350,38 +382,6 @@ namespace PhatTrienUngDungQuanLiDangKiHocPhan
             this.lblTitle.Size = new System.Drawing.Size(300, 40);
             this.lblTitle.TabIndex = 2;
             this.lblTitle.Text = "TỔNG HỢP ĐĂNG KÝ";
-            // 
-            // MaLHP
-            // 
-            this.MaLHP.HeaderText = "Mã lớp HP";
-            this.MaLHP.MinimumWidth = 6;
-            this.MaLHP.Name = "MaLHP";
-            // 
-            // MaLH
-            // 
-            this.MaLH.HeaderText = "Lịch học";
-            this.MaLH.MinimumWidth = 6;
-            this.MaLH.Name = "MaLH";
-            // 
-            // TenGV
-            // 
-            this.TenGV.HeaderText = "Giảng viên";
-            this.TenGV.MinimumWidth = 6;
-            this.TenGV.Name = "TenGV";
-            // 
-            // SoChoTrong
-            // 
-            this.SoChoTrong.HeaderText = "Số chỗ trống";
-            this.SoChoTrong.MinimumWidth = 6;
-            this.SoChoTrong.Name = "SoChoTrong";
-            // 
-            // btnDangKy
-            // 
-            this.btnDangKy.HeaderText = "";
-            this.btnDangKy.MinimumWidth = 6;
-            this.btnDangKy.Name = "btnDangKy";
-            this.btnDangKy.Text = "Đăng ký";
-            this.btnDangKy.UseColumnTextForButtonValue = true;
             // 
             // ucDangKyTinChi
             // 

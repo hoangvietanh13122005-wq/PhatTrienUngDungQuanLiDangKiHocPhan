@@ -5,9 +5,21 @@ namespace PhatTrienUngDungQuanLiDangKiHocPhan
 {
     public partial class frmMain : Form
     {
+        
         public frmMain()
         {
             InitializeComponent();
+        }
+
+        // New constructor: accept student id and optional student name
+        public frmMain(string maSV, string tenSV) : this()
+        {
+            if (!string.IsNullOrEmpty(maSV))
+                lblMSV.Text = maSV;
+
+            if (!string.IsNullOrEmpty(tenSV))
+                lblTenSV.Text = tenSV;
+            
         }
 
         private void LoadUserControl(UserControl uc)
@@ -23,7 +35,7 @@ namespace PhatTrienUngDungQuanLiDangKiHocPhan
 
         private void btnDKTC_Click(object sender, EventArgs e)
         {
-            LoadUserControl(new ucDangKyTinChi());
+            LoadUserControl(new ucDangKyTinChi(lblMSV.Text));
         }
 
         private void btnTCHP_Click(object sender, EventArgs e)
@@ -33,13 +45,15 @@ namespace PhatTrienUngDungQuanLiDangKiHocPhan
 
         private void btnLSDK_Click(object sender, EventArgs e)
         {
-            LoadUserControl(new ucLichSuDangKy());
+            LoadUserControl(new ucLichSuDangKy(lblMSV.Text));
         }
 
         private void btnDangXuat_Click(object sender, EventArgs e)
         {
-            // Close this main form — the hidden original login form will be shown
+            // Closing this form will re-show the original login form (frmDangNhap) because login attached FormClosed handler
             this.Close();
         }
+
+        
     }
 }

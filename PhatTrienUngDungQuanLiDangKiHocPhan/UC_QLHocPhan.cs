@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -6,49 +8,86 @@ namespace PhatTrienUngDungQuanLiDangKiHocPhan
 {
     public partial class UC_QLHocPhan : UserControl
     {
+        private readonly string _connectionString = @"Data Source=DESKTOP-KGSNLET\SQLEXPRESS;Initial Catalog=QL_DangKyTinChi;Integrated Security=True";
+
         public UC_QLHocPhan()
         {
             InitializeComponent();
+
+            this.Load += UC_QLHocPhan_Load;
+            btnTimKiem.Click += btnTimKiem_Click;
+            btnLamMoi.Click += btnLamMoi_Click;
         }
 
         private void UC_QLHocPhan_Load(object sender, EventArgs e)
         {
-            // Load dữ liệu ban đầu nếu cần
+            LoadMonHoc();
         }
 
-        // ===== Event handlers ví dụ =====
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
-            string truong = cboTimTheo.SelectedItem.ToString();
-            string keyword = txtTuKhoa.Text.Trim().ToLower();
-
-            foreach (DataGridViewRow row in dgvHocPhan.Rows)
-            {
-                bool visible = true;
-                switch (truong)
-                {
-                    case "Mã học phần":
-                        visible = row.Cells["MaHP"].Value.ToString().ToLower().Contains(keyword);
-                        break;
-                    case "Tên học phần":
-                        visible = row.Cells["TenHP"].Value.ToString().ToLower().Contains(keyword);
-                        break;
-                    case "Loại":
-                        visible = row.Cells["Loai"].Value.ToString().ToLower().Contains(keyword);
-                        break;
-                    case "Điều kiện tiên quyết":
-                        visible = row.Cells["DieuKien"].Value.ToString().ToLower().Contains(keyword);
-                        break;
-                }
-                row.Visible = visible;
-            }
+            var type = cboTimTheo.SelectedItem?.ToString();
+            var term = txtTuKhoa.Text?.Trim();
+            LoadMonHoc(type, term);
         }
 
         private void btnLamMoi_Click(object sender, EventArgs e)
         {
             txtTuKhoa.Text = "";
-            foreach (DataGridViewRow row in dgvHocPhan.Rows)
-                row.Visible = true;
+            cboTimTheo.SelectedIndex = -1;
+            LoadMonHoc();
+        }
+
+        private void LoadMonHoc(string filterType = null, string filterTerm = null)
+        {
+            try
+            {
+                using (var conn = new SqlConnection(_connectionString))
+                using (var cmd = new SqlCommand())
+                {
+                    cmd.Connection = conn;
+
+                    var sql = @"
+                                SELECT 
+                                    mh.MaMH, 
+                                    mh.TenMH, 
+                                    mh.SoTinChi, 
+                                    mtq.TenMH AS TenMonTienQuyet
+                                FROM MON_HOC mh
+                                LEFT JOIN MON_HOC mtq ON mh.MaMonTienQuyet = mtq.MaMH";
+
+
+                    if (!string.IsNullOrWhiteSpace(filterType) && !string.IsNullOrWhiteSpace(filterTerm))
+                    {
+                        if (filterType.IndexOf("Mã", StringComparison.OrdinalIgnoreCase) >= 0)
+                        {
+                            sql += " WHERE mh.MaMH LIKE @term + '%'";
+                            cmd.Parameters.AddWithValue("@term", filterTerm);
+                        }
+                        else
+                        {
+                            sql += " WHERE mh.TenMH LIKE '%' + @term + '%'";
+                            cmd.Parameters.AddWithValue("@term", filterTerm);
+                        }
+                    }
+
+                    cmd.CommandText = sql;
+
+                    var adapter = new SqlDataAdapter(cmd);
+                    var table = new DataTable();
+                    adapter.Fill(table);
+
+                    // Bind to grid
+                    dgvHocPhan.AutoGenerateColumns = true;
+                    dgvHocPhan.DataSource = table;
+
+                    
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi tải dữ liệu học phần: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnThem_Click(object sender, EventArgs e)

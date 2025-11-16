@@ -9,8 +9,7 @@ namespace PhatTrienUngDungQuanLiDangKiHocPhan
         /// </summary>
         private System.ComponentModel.IContainer components = null;
         private System.Windows.Forms.Panel panelTop;
-        private System.Windows.Forms.ComboBox cboTimTheo;
-        private System.Windows.Forms.TextBox txtTuKhoa;
+        private System.Windows.Forms.ComboBox cboNamHoc;
         private System.Windows.Forms.Button btnTimKiem;
         private System.Windows.Forms.Button btnLamMoi;
         private System.Windows.Forms.DataGridView dgvPhanCong;
@@ -38,20 +37,21 @@ namespace PhatTrienUngDungQuanLiDangKiHocPhan
         private void InitializeComponent()
         {
             this.panelTop = new System.Windows.Forms.Panel();
+            this.cboHocKy = new System.Windows.Forms.ComboBox();
             this.lblTimTheo = new System.Windows.Forms.Label();
-            this.cboTimTheo = new System.Windows.Forms.ComboBox();
+            this.cboNamHoc = new System.Windows.Forms.ComboBox();
             this.lblTuKhoa = new System.Windows.Forms.Label();
-            this.txtTuKhoa = new System.Windows.Forms.TextBox();
             this.btnTimKiem = new System.Windows.Forms.Button();
             this.btnLamMoi = new System.Windows.Forms.Button();
             this.dgvPhanCong = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HoTen = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaLHP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenMH = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaLichHoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblHeader = new System.Windows.Forms.Label();
+            this.btnInBaoCao = new System.Windows.Forms.Button();
             this.panelTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPhanCong)).BeginInit();
             this.SuspendLayout();
@@ -59,10 +59,11 @@ namespace PhatTrienUngDungQuanLiDangKiHocPhan
             // panelTop
             // 
             this.panelTop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(240)))), ((int)(((byte)(250)))));
+            this.panelTop.Controls.Add(this.btnInBaoCao);
+            this.panelTop.Controls.Add(this.cboHocKy);
             this.panelTop.Controls.Add(this.lblTimTheo);
-            this.panelTop.Controls.Add(this.cboTimTheo);
+            this.panelTop.Controls.Add(this.cboNamHoc);
             this.panelTop.Controls.Add(this.lblTuKhoa);
-            this.panelTop.Controls.Add(this.txtTuKhoa);
             this.panelTop.Controls.Add(this.btnTimKiem);
             this.panelTop.Controls.Add(this.btnLamMoi);
             this.panelTop.Dock = System.Windows.Forms.DockStyle.Top;
@@ -72,28 +73,40 @@ namespace PhatTrienUngDungQuanLiDangKiHocPhan
             this.panelTop.TabIndex = 1;
             this.panelTop.Paint += new System.Windows.Forms.PaintEventHandler(this.panelTop_Paint);
             // 
+            // cboHocKy
+            // 
+            this.cboHocKy.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboHocKy.Items.AddRange(new object[] {
+            "Mã giảng viên",
+            "Tên giảng viên",
+            "Mã học phần",
+            "Tên học phần"});
+            this.cboHocKy.Location = new System.Drawing.Point(381, 26);
+            this.cboHocKy.Name = "cboHocKy";
+            this.cboHocKy.Size = new System.Drawing.Size(150, 24);
+            this.cboHocKy.TabIndex = 6;
+            // 
             // lblTimTheo
             // 
             this.lblTimTheo.Location = new System.Drawing.Point(21, 28);
             this.lblTimTheo.Name = "lblTimTheo";
             this.lblTimTheo.Size = new System.Drawing.Size(125, 23);
             this.lblTimTheo.TabIndex = 0;
-            this.lblTimTheo.Text = "Tìm Theo";
+            this.lblTimTheo.Text = "Năm học";
             this.lblTimTheo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblTimTheo.Click += new System.EventHandler(this.lblTimTheo_Click);
             // 
-            // cboTimTheo
+            // cboNamHoc
             // 
-            this.cboTimTheo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboTimTheo.Items.AddRange(new object[] {
+            this.cboNamHoc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboNamHoc.Items.AddRange(new object[] {
             "Mã giảng viên",
             "Tên giảng viên",
             "Mã học phần",
             "Tên học phần"});
-            this.cboTimTheo.Location = new System.Drawing.Point(152, 27);
-            this.cboTimTheo.Name = "cboTimTheo";
-            this.cboTimTheo.Size = new System.Drawing.Size(150, 24);
-            this.cboTimTheo.TabIndex = 1;
+            this.cboNamHoc.Location = new System.Drawing.Point(152, 27);
+            this.cboNamHoc.Name = "cboNamHoc";
+            this.cboNamHoc.Size = new System.Drawing.Size(150, 24);
+            this.cboNamHoc.TabIndex = 1;
             // 
             // lblTuKhoa
             // 
@@ -101,22 +114,15 @@ namespace PhatTrienUngDungQuanLiDangKiHocPhan
             this.lblTuKhoa.Name = "lblTuKhoa";
             this.lblTuKhoa.Size = new System.Drawing.Size(83, 23);
             this.lblTuKhoa.TabIndex = 2;
-            this.lblTuKhoa.Text = "Từ khóa";
+            this.lblTuKhoa.Text = "Học kỳ";
             this.lblTuKhoa.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // txtTuKhoa
-            // 
-            this.txtTuKhoa.Location = new System.Drawing.Point(397, 28);
-            this.txtTuKhoa.Name = "txtTuKhoa";
-            this.txtTuKhoa.Size = new System.Drawing.Size(200, 22);
-            this.txtTuKhoa.TabIndex = 3;
             // 
             // btnTimKiem
             // 
             this.btnTimKiem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(215)))));
             this.btnTimKiem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTimKiem.ForeColor = System.Drawing.Color.White;
-            this.btnTimKiem.Location = new System.Drawing.Point(603, 23);
+            this.btnTimKiem.Location = new System.Drawing.Point(548, 20);
             this.btnTimKiem.Name = "btnTimKiem";
             this.btnTimKiem.Size = new System.Drawing.Size(90, 30);
             this.btnTimKiem.TabIndex = 4;
@@ -129,7 +135,7 @@ namespace PhatTrienUngDungQuanLiDangKiHocPhan
             this.btnLamMoi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(215)))));
             this.btnLamMoi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLamMoi.ForeColor = System.Drawing.Color.White;
-            this.btnLamMoi.Location = new System.Drawing.Point(699, 23);
+            this.btnLamMoi.Location = new System.Drawing.Point(654, 20);
             this.btnLamMoi.Name = "btnLamMoi";
             this.btnLamMoi.Size = new System.Drawing.Size(90, 30);
             this.btnLamMoi.TabIndex = 5;
@@ -144,12 +150,12 @@ namespace PhatTrienUngDungQuanLiDangKiHocPhan
             this.dgvPhanCong.BackgroundColor = System.Drawing.Color.White;
             this.dgvPhanCong.ColumnHeadersHeight = 29;
             this.dgvPhanCong.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4,
-            this.dataGridViewTextBoxColumn5,
-            this.dataGridViewTextBoxColumn6});
+            this.MaGV,
+            this.HoTen,
+            this.MaLHP,
+            this.TenMH,
+            this.MaLichHoc,
+            this.MaPhong});
             this.dgvPhanCong.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvPhanCong.Location = new System.Drawing.Point(0, 120);
             this.dgvPhanCong.Name = "dgvPhanCong";
@@ -160,47 +166,53 @@ namespace PhatTrienUngDungQuanLiDangKiHocPhan
             this.dgvPhanCong.TabIndex = 0;
             this.dgvPhanCong.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPhanCong_CellContentClick);
             // 
-            // dataGridViewTextBoxColumn1
+            // MaGV
             // 
-            this.dataGridViewTextBoxColumn1.HeaderText = "Mã giảng viên";
-            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.MaGV.DataPropertyName = "MaGV";
+            this.MaGV.HeaderText = "Mã giảng viên";
+            this.MaGV.MinimumWidth = 6;
+            this.MaGV.Name = "MaGV";
+            this.MaGV.ReadOnly = true;
             // 
-            // dataGridViewTextBoxColumn2
+            // HoTen
             // 
-            this.dataGridViewTextBoxColumn2.HeaderText = "Tên giảng viên";
-            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.HoTen.DataPropertyName = "HoTen";
+            this.HoTen.HeaderText = "Tên giảng viên";
+            this.HoTen.MinimumWidth = 6;
+            this.HoTen.Name = "HoTen";
+            this.HoTen.ReadOnly = true;
             // 
-            // dataGridViewTextBoxColumn3
+            // MaLHP
             // 
-            this.dataGridViewTextBoxColumn3.HeaderText = "Mã lớp học phần";
-            this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.MaLHP.DataPropertyName = "MaLHP";
+            this.MaLHP.HeaderText = "Mã lớp học phần";
+            this.MaLHP.MinimumWidth = 6;
+            this.MaLHP.Name = "MaLHP";
+            this.MaLHP.ReadOnly = true;
             // 
-            // dataGridViewTextBoxColumn4
+            // TenMH
             // 
-            this.dataGridViewTextBoxColumn4.HeaderText = "Tên học phần";
-            this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            this.TenMH.DataPropertyName = "TenMH";
+            this.TenMH.HeaderText = "Tên học phần";
+            this.TenMH.MinimumWidth = 6;
+            this.TenMH.Name = "TenMH";
+            this.TenMH.ReadOnly = true;
             // 
-            // dataGridViewTextBoxColumn5
+            // MaLichHoc
             // 
-            this.dataGridViewTextBoxColumn5.HeaderText = "Thời gian học";
-            this.dataGridViewTextBoxColumn5.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            this.MaLichHoc.DataPropertyName = "MaLichHoc";
+            this.MaLichHoc.HeaderText = "Thời gian học";
+            this.MaLichHoc.MinimumWidth = 6;
+            this.MaLichHoc.Name = "MaLichHoc";
+            this.MaLichHoc.ReadOnly = true;
             // 
-            // dataGridViewTextBoxColumn6
+            // MaPhong
             // 
-            this.dataGridViewTextBoxColumn6.HeaderText = "Phòng học";
-            this.dataGridViewTextBoxColumn6.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            this.MaPhong.DataPropertyName = "MaPhong";
+            this.MaPhong.HeaderText = "Phòng học";
+            this.MaPhong.MinimumWidth = 6;
+            this.MaPhong.Name = "MaPhong";
+            this.MaPhong.ReadOnly = true;
             // 
             // lblHeader
             // 
@@ -216,6 +228,20 @@ namespace PhatTrienUngDungQuanLiDangKiHocPhan
             this.lblHeader.Text = "QUẢN LÍ GIẢNG VIÊN";
             this.lblHeader.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // btnInBaoCao
+            // 
+            this.btnInBaoCao.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnInBaoCao.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(120)))), ((int)(((byte)(215)))));
+            this.btnInBaoCao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnInBaoCao.ForeColor = System.Drawing.Color.White;
+            this.btnInBaoCao.Location = new System.Drawing.Point(960, 22);
+            this.btnInBaoCao.Name = "btnInBaoCao";
+            this.btnInBaoCao.Size = new System.Drawing.Size(131, 30);
+            this.btnInBaoCao.TabIndex = 7;
+            this.btnInBaoCao.Text = "Xuất danh sách";
+            this.btnInBaoCao.UseVisualStyleBackColor = false;
+            this.btnInBaoCao.Click += new System.EventHandler(this.btnInBaoCao_Click);
+            // 
             // UC_QLGiangVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -227,7 +253,6 @@ namespace PhatTrienUngDungQuanLiDangKiHocPhan
             this.Size = new System.Drawing.Size(1113, 566);
             this.Load += new System.EventHandler(this.UC_QLGiangVien_Load);
             this.panelTop.ResumeLayout(false);
-            this.panelTop.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPhanCong)).EndInit();
             this.ResumeLayout(false);
 
@@ -237,11 +262,13 @@ namespace PhatTrienUngDungQuanLiDangKiHocPhan
 
         private Label lblTimTheo;
         private Label lblTuKhoa;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private DataGridViewTextBoxColumn MaGV;
+        private DataGridViewTextBoxColumn HoTen;
+        private DataGridViewTextBoxColumn MaLHP;
+        private DataGridViewTextBoxColumn TenMH;
+        private DataGridViewTextBoxColumn MaLichHoc;
+        private DataGridViewTextBoxColumn MaPhong;
+        private ComboBox cboHocKy;
+        private Button btnInBaoCao;
     }
 }

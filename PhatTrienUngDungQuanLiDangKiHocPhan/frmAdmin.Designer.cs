@@ -34,7 +34,6 @@
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.btnqlhk = new Guna.UI2.WinForms.Guna2Button();
-            this.btnreport = new Guna.UI2.WinForms.Guna2Button();
             this.btngiangvien = new Guna.UI2.WinForms.Guna2Button();
             this.btnsinhvien = new Guna.UI2.WinForms.Guna2Button();
             this.btnlophocphan = new Guna.UI2.WinForms.Guna2Button();
@@ -109,7 +108,6 @@
             // 
             this.guna2Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(115)))), ((int)(((byte)(190)))));
             this.guna2Panel1.Controls.Add(this.btnqlhk);
-            this.guna2Panel1.Controls.Add(this.btnreport);
             this.guna2Panel1.Controls.Add(this.btngiangvien);
             this.guna2Panel1.Controls.Add(this.btnsinhvien);
             this.guna2Panel1.Controls.Add(this.btnlophocphan);
@@ -137,22 +135,6 @@
             this.btnqlhk.TabIndex = 8;
             this.btnqlhk.Text = "Quản lí học kỳ";
             this.btnqlhk.Click += new System.EventHandler(this.btnqlhk_Click);
-            // 
-            // btnreport
-            // 
-            this.btnreport.BorderRadius = 15;
-            this.btnreport.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnreport.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnreport.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnreport.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnreport.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnreport.ForeColor = System.Drawing.Color.White;
-            this.btnreport.Location = new System.Drawing.Point(21, 398);
-            this.btnreport.Name = "btnreport";
-            this.btnreport.Size = new System.Drawing.Size(250, 45);
-            this.btnreport.TabIndex = 7;
-            this.btnreport.Text = "Báo cáo thống kê";
-            this.btnreport.Click += new System.EventHandler(this.btnreport_Click);
             // 
             // btngiangvien
             // 
@@ -296,7 +278,6 @@
         private Guna.UI2.WinForms.Guna2Button btnhocphan;
         private Guna.UI2.WinForms.Guna2Panel panelmain;
         private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox1;
-        private Guna.UI2.WinForms.Guna2Button btnreport;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblma;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblten;
 
